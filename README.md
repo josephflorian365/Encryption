@@ -49,7 +49,7 @@ Combinación de algoritmos de cifrado Polybio + Escitala + Ascii + Aes - 256
 
 ![image](https://user-images.githubusercontent.com/53907643/142883742-71483b00-5f08-42e6-b7c8-4c8c6a573b7d.png)
 
-Para una clave de 128 bits se realizarán 10 subclaves
+- Para una clave de 128 bits se realizarán 10 subclaves
 
 - CRIPTOGRAMA
 
