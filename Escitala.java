@@ -1,4 +1,5 @@
 public class Escitala {
+    // Variables de inicio
     private String text;
     private int tSize;
     private int columns;
@@ -9,6 +10,7 @@ public class Escitala {
     public Escitala() {
     }
 
+    // Funcion para encriptar el codigo Escitala
     public String encrypt(String text, int columns) {
         setData(text, columns);
         for (int i = 0; i < getRows(); i++) {
@@ -26,6 +28,7 @@ public class Escitala {
         return res.toString().trim();
     }
 
+    // Funcion para desencriptar el codigo Escitala
     public String decrypt(String text, int columns) {
         setData(text, columns);
         for (int i = 0; i < getColumns(); i++) {
@@ -43,6 +46,7 @@ public class Escitala {
         return res.toString().trim();
     }
 
+    // Constructor
     private void setData(String text, int columns) {
         this.text = text.trim();
         this.columns = columns;
@@ -72,6 +76,7 @@ public class Escitala {
         return escitala;
     }
 
+    // Uso previo del encriptado
     public static void main(String[] args) {
 
         String textDec = "En un lugar de la Mancha, de cuyo nombre no quiero acordarme";

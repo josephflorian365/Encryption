@@ -1,8 +1,3 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-
 public class Main {
     public static void main(String[] args) {
         Polybios polybios = new Polybios();
@@ -10,15 +5,36 @@ public class Main {
         Ascii ascii = new Ascii();
         Aes aes = new Aes();
 
+        String frase = "Hola Petter";
         int columns = 4;
 
-        String polybios_encryption = polybios.cifrar("Hola Petter");
-        System.out.println("polybios : " + polybios_encryption);
-        String escitala_encryption = escitala.encrypt(polybios_encryption, columns);
-        System.out.println("escitala : " + escitala_encryption);
-        String ascii_ecnryption = ascii.encrypt(escitala_encryption);
-        System.out.println("ascii : " + ascii_ecnryption);
-        System.out.println("aes - 256 : " + aes.getAES("data"));
+        System.out.println("---------------------------------------------------------------");
+        System.out.println("||||||||||||||||||||||| *  CIFRADO * ||||||||||||||||||||||||||");
+        System.out.println("---------------------------------------------------------------");
+        //Encryption
+        String polybiosEncryption = polybios.Cifrar_Polibio(frase);
+        System.out.println("polybios : " + polybiosEncryption);
+        String escitalaEncryption = escitala.encrypt(polybiosEncryption, columns);
+        System.out.println("escitala : " + escitalaEncryption);
+        String asciiEcnryption = ascii.encrypt(escitalaEncryption);
+        System.out.println("ascii : " + asciiEcnryption);
+        String aesEncryption = aes.getAES(asciiEcnryption);
+        System.out.println("aes - 256 : " + aesEncryption);
 
+        System.out.println("---------------------------------------------------------------");
+        System.out.println("||||||||||||||||||||||| *  DESCIFRADO * ||||||||||||||||||||||||||");
+        System.out.println("---------------------------------------------------------------");
+        //decryption
+        String aesDecryption = aes.getAESDecrypt(aesEncryption);
+        System.out.println("aes - 256 Decryption : " + aesDecryption);
+        String asciiDecryption = ascii.decrypt(aesDecryption);
+        System.out.println("ascii Decryption : " + asciiDecryption);
+        String escitalaDecryption = escitala.decrypt(asciiDecryption, columns);
+        System.out.println("escitala Decryption : " + escitalaDecryption);
+        String polybiosDecryption = polybios.Descifrar_Polibio(escitalaDecryption);
+        System.out.println("polybios Decryption : " + polybiosDecryption);
+        
+        
+        
     }
 }
