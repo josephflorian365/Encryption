@@ -9,12 +9,6 @@ public class Polybios {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-
-        char[][] matris = { { 'a', 'b', 'c', 'd', 'e', 'f', 'g' }, { 'h', 'i', 'j', 'k', 'l', 'm', 'n' },
-                { 'ñ', 'o', 'p', 'q', 'r', 's', 't' }, { 'u', 'v', 'w', 'x', 'y', 'z', '1' },
-                { '2', '3', '4', '5', '6', '7', '8' }, { '9', '0', '_', '-', ' ', '.', ',' },
-                { '$', '#', '%', '&', '+', '*', '/' } };
-
         System.out.println("\t   ---------------------");
         System.out.println("\t  | *  CIFRADO POLIBIO * |");
         System.out.println("\t   ---------------------");
@@ -23,7 +17,8 @@ public class Polybios {
         System.out.println("Ingrese el Mensaje: ");
         String mensaje = sc.nextLine();
         System.out.println("\nMatriz");
-        Imprimir(matris);
+        Polybios polybios = new Polybios();
+        Imprimir(polybios.matriz);
         System.out.print("\nCifrado: ");
         Polybios poli = new Polybios();
         String cipher = poli.Cifrar_Polibio(mensaje);
@@ -31,7 +26,7 @@ public class Polybios {
         sc.close();
         System.out.print("\nDescifrado: ");
         String msj = poli.Descifrar_Polibio(cipher);
-
+        System.out.println(msj);
     }
 
     public static void Imprimir(char[][] matris) {
