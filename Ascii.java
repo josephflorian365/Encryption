@@ -15,17 +15,19 @@ public class Ascii {
 
     // Funcion para encriptar el codigo Ascii
     public String encrypt(String mensaje) {
-        char Letras[] = new char[mensaje.length()];
-        int Ascii[] = new int[mensaje.length()];
+        char Letras[] = new char[mensaje.length()];// obtenemos la longitud de la cadena de tipo lista caracter
+        int Ascii[] = new int[mensaje.length()];// obtenemos la longitud de la cadena de tipo lista entero
         for (int i = 0; i < mensaje.length(); i++) {
             Letras[i] = mensaje.charAt(i);
             Ascii[i] = (int) Letras[i];
             // System.out.print(Ascii[i] + " ");
         }
 
-        List<Integer> list = Arrays.stream(Ascii).boxed().collect(Collectors.toList());
-        String result = list.stream().map(n -> String.valueOf(n)).collect(Collectors.joining(" "));
-        return result;
+        List<Integer> list = Arrays.stream(Ascii).boxed().collect(Collectors.toList()); // convertimos a Lista
+        String result = list.stream().map(n -> String.valueOf(n)).collect(Collectors.joining(" ")); // la lista es
+                                                                                                    // convertida a
+                                                                                                    // String
+        return result; // retorna un string el cual es el encriptado
     }
 
     // Funcion para desencriptar el codigo Ascii
@@ -41,9 +43,9 @@ public class Ascii {
         }
 
         for (String fruit : lista) {
-			str += fruit+"";
-		}
-        //System.out.println(str);
+            str += fruit + "";
+        }
+        // System.out.println(str);
         return str;
     }
 }

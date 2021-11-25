@@ -11,7 +11,7 @@ public class Main {
         System.out.println("---------------------------------------------------------------");
         System.out.println("||||||||||||||||||||||| *  CIFRADO * ||||||||||||||||||||||||||");
         System.out.println("---------------------------------------------------------------");
-        //Encryption
+        // Encryption
         String polybiosEncryption = polybios.Cifrar_Polibio(frase);
         System.out.println("polybios : " + polybiosEncryption);
         String escitalaEncryption = escitala.encrypt(polybiosEncryption, columns);
@@ -24,7 +24,7 @@ public class Main {
         System.out.println("---------------------------------------------------------------");
         System.out.println("||||||||||||||||||||||| *  DESCIFRADO * ||||||||||||||||||||||||||");
         System.out.println("---------------------------------------------------------------");
-        //decryption
+        // decryption
         String aesDecryption = aes.getAESDecrypt(aesEncryption);
         System.out.println("aes - 256 Decryption : " + aesDecryption);
         String asciiDecryption = ascii.decrypt(aesDecryption);
@@ -33,8 +33,6 @@ public class Main {
         System.out.println("escitala Decryption : " + escitalaDecryption);
         String polybiosDecryption = polybios.Descifrar_Polibio(escitalaDecryption);
         System.out.println("polybios Decryption : " + polybiosDecryption);
-        
-        
-        
+
     }
 }

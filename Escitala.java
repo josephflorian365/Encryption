@@ -15,7 +15,8 @@ public class Escitala {
         setData(text, columns);
         for (int i = 0; i < getRows(); i++) {
             for (int j = 0; j < getColumns(); j++) {
-                getEscitala()[i][j] = index < gettSize() ? getText().charAt(index++) : ' ';
+                getEscitala()[i][j] = index < gettSize() ? getText().charAt(index++) : ' ';// recorremos las filas y
+                                                                                           // columnas para encriptar
             }
         }
 
@@ -25,7 +26,7 @@ public class Escitala {
                 res.append(getEscitala()[j][i]);
             }
         }
-        return res.toString().trim();
+        return res.toString().trim();// retorno una cadena y elimino los espacios en blanco
     }
 
     // Funcion para desencriptar el codigo Escitala
@@ -33,17 +34,18 @@ public class Escitala {
         setData(text, columns);
         for (int i = 0; i < getColumns(); i++) {
             for (int j = 0; j < getRows(); j++) {
-                getEscitala()[j][i] = index < gettSize() ? getText().charAt(index++) : ' ';
+                getEscitala()[j][i] = index < gettSize() ? getText().charAt(index++) : ' ';// recorremos las filas y
+                                                                                           // columnas para encriptar
             }
         }
 
         StringBuilder res = new StringBuilder();
         for (int i = 0; i < getRows(); i++) {
             for (int j = 0; j < getColumns(); j++) {
-                res.append(getEscitala()[i][j]);
+                res.append(getEscitala()[i][j]);// recorremos las filas y columnas para encriptar
             }
         }
-        return res.toString().trim();
+        return res.toString().trim();// retorno una cadena y elimino los espacios en blanco
     }
 
     // Constructor

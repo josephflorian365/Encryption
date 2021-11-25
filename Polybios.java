@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 public class Polybios {
     char[][] matriz = { { 'a', 'b', 'c', 'd', 'e', 'f', 'g' }, { 'h', 'i', 'j', 'k', 'l', 'm', 'n' },
             { 'ñ', 'o', 'p', 'q', 'r', 's', 't' }, { 'u', 'v', 'w', 'x', 'y', 'z', '1' },
@@ -29,12 +28,13 @@ public class Polybios {
         System.out.println(msj);
     }
 
+    // funcion para imprimir la matriz
     public static void Imprimir(char[][] matris) {
         for (int i = 0; i < matris.length; i++) {
 
             for (int j = 0; j < matris[i].length; j++) {
 
-                System.out.print(matris[i][j] + " ");
+                System.out.print(matris[i][j] + " ");// recorremos las filas y columnas para encriptar
             }
             System.out.println("");
         }
